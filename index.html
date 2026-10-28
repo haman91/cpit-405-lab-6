@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPIT-405 Lab 6 | Like, Dislike & Comments</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">CPIT-405 · LAB 6</p>
+    <h1>Share your thoughts</h1>
+    <p>Practice JavaScript events, DOM manipulation, and cookies.</p>
+  </header>
+
+  <main class="page">
+    <section class="post card" aria-labelledby="post-title">
+      <div class="post-tag">COMMUNITY POST</div>
+      <h2 id="post-title">What do you think about learning JavaScript?</h2>
+      <p class="post-copy">JavaScript lets us make webpages interactive. Use the buttons below to share your reaction and leave a comment.</p>
+
+      <div class="vote-row">
+        <button id="like-button" class="vote-button like" type="button" aria-describedby="like-count">
+          <span aria-hidden="true">👍</span> Like <span id="like-count" class="count">0</span>
+        </button>
+        <button id="dislike-button" class="vote-button dislike" type="button" aria-describedby="dislike-count">
+          <span aria-hidden="true">👎</span> Dislike <span id="dislike-count" class="count">0</span>
+        </button>
+      </div>
+      <p id="vote-status" class="status" role="status" aria-live="polite">You have not voted yet.</p>
+    </section>
+
+    <section class="card comment-card" aria-labelledby="comment-title">
+      <h2 id="comment-title">Leave a comment</h2>
+      <p class="muted">For this lab, each browser can submit one comment until the state is reset.</p>
+      <form id="comment-form">
+        <label for="comment-input">Your comment</label>
+        <textarea id="comment-input" rows="3" maxlength="300" placeholder="Write your thoughts..." required></textarea>
+        <div class="form-bottom">
+          <span id="char-count" class="muted">0 / 300</span>
+          <button id="comment-button" class="primary-button" type="submit">Post comment</button>
+        </div>
+      </form>
+      <p id="comment-status" class="status" role="status" aria-live="polite"></p>
+      <div class="comments-heading">
+        <h3>Comments</h3>
+        <span id="comment-count" class="pill">0</span>
+      </div>
+      <ul id="comments-list" class="comments-list"></ul>
+      <p id="empty-comments" class="empty-state">No comments yet. Be the first to comment.</p>
+    </section>
+
+    <section class="reset-section">
+      <div>
+        <h2>Start over?</h2>
+        <p class="muted">Reset this browser's vote, counters, and comments.</p>
+      </div>
+      <button id="reset-button" class="reset-button" type="button">Reset choices & comments</button>
+    </section>
+    <p class="note"><strong>Lab note:</strong> Cookies are stored in this browser. These counts are local to this browser, not shared across all visitors.</p>
+  </main>
+
+  <footer>CPIT-405 · JavaScript, DOM events, and cookies</footer>
+</body>
+</html>
